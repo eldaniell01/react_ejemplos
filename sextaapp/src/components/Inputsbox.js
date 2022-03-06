@@ -29,9 +29,9 @@ const Input = ({estado, cambiarEstado, tipo, icon, name, error, expresionRegular
                     onBlur={validation}
                     valido={estado.valido}
                     />
-                <Checkvalidate src={icon} width="25px"></Checkvalidate>
+                <Checkvalidate src={icon} width="25px" ></Checkvalidate>
             </Groupinputs>
-            <P>{error}</P>
+            <P valido={estado.valido}>{error}</P>
         </div>
     )
 };

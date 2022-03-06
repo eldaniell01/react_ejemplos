@@ -64,6 +64,12 @@ const P = styled.p`
     margin bottom: 0px;
     color: ${colres.error};
     display: none;
+    ${props => props.valido==='true'&&css`
+        display: none ;
+    `}
+    ${props => props.valido==='false'&&css`
+        display: block ;
+    `}
 `;
 
 const Checkvalidate = styled.img`
@@ -72,6 +78,7 @@ const Checkvalidate = styled.img`
     bottom: 14px;
     z-index: 100;
     opacity: 0;
+    
 `;
 
 const Passview = styled.img`
