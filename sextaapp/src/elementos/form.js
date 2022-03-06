@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 const colres ={
 
@@ -23,7 +23,9 @@ const Label = styled.label`
     padding: 10px;
     min-height: 40px;
     cursor: pointer;
-
+    ${props => props.valido === 'false' && css`
+        color: ${colres.error};
+    `}
 `;
 
 const Groupinputs = styled.div`
@@ -35,6 +37,8 @@ const Inputs = styled.input`
     width: 100%;
     background: #fff;
     border-radius: 4px;
+    font-weight: 400;
+    font-size: 1em;
     height: 50px;
     line-height: 50px;
     padding: 0 40px 0 10px;
@@ -45,12 +49,21 @@ const Inputs = styled.input`
         outline: none;
         box-shadow: 3px 0px 30px rgba(163,163,163,0.4); 
     }
+
+    ${props => props.valido==='true' && css`
+        border: 3px solid transparent;
+    `}
+
+    ${props => props.valido==='false' && css`
+        border: 3px solid ${colres.error} !important;
+    `}
 `;
 
 const P = styled.p`
     font-size: 12px;
     margin bottom: 0px;
     color: ${colres.error};
+    display: none;
 `;
 
 const Checkvalidate = styled.img`
@@ -58,6 +71,65 @@ const Checkvalidate = styled.img`
     right: 10px;
     bottom: 14px;
     z-index: 100;
+    opacity: 0;
 `;
 
-export {Form, Label, Groupinputs, Inputs, P, Checkvalidate};
+const Passview = styled.img`
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+    z-index: 100;
+    
+`;
+
+const Grouperror =styled.div`
+    height: 45px;
+    line-height: 45px;
+    background: ${colres.error};
+    padding: 0px 15px;
+    border-radius: 3px;
+    grid-column: span 2;
+    
+    p{
+        margin: 0px;
+    }
+    b{
+        margin-left: 30px;
+    }
+    img{
+        position: absolute;
+        margin-top: 10px;
+    }
+    
+`;
+
+const Groupbutton =styled.div`
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 2;
+    
+`;
+
+const Button = styled.button`
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: #005C53;
+    font-weight: 400;
+    font-size: 1em;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    
+    transition: 0.3s ease all;
+    &:hover{
+        box-shadow: 3px 0px 10px rgba(13, 13, 13, 1);
+    }
+`;
+
+
+
+export {Form, Label, Groupinputs, Inputs, P, Checkvalidate, Groupbutton, Grouperror, Button, Passview};
