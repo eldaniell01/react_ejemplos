@@ -1,5 +1,5 @@
 import React, {useState} from "react"; // se importa la libre
-import {Form, Groupbutton, Grouperror, Button,} from "../elementos/form";
+import {Form, Titulo, Groupbutton, Grouperror, Button,} from "../elementos/form";
 import error1 from "../../img/icons8_error_52px.png";
 import Input from "./Inputsbox";
 import Inputpass from "./Inputspassbox";
@@ -12,9 +12,10 @@ const App = () =>{// se crea el componente
     const expresiones = {
         usuario: /^[a-zA-Z\_\-]{6,16}$/,
     }
-
+    
     return(
         <main>
+            <Titulo htmlFor=""><center>LOGIN</center></Titulo>
             <Form>
                 <Input 
                     estado={usuario}
@@ -28,13 +29,15 @@ const App = () =>{// se crea el componente
                     expresionRegular={expresiones.usuario}
                 />
                 <Inputpass
+                    estado={pass}
+                    cambiarEstado={cambiarPass}
                     label="Contraseña"
                     placeholder="Contraseña"
                     tipo="password"
                     name="pass"
                     error="Contraseña incorrecta"
                     icon={view}
-                    expresionRegular=""
+                    expresionRegular={expresiones.usuario}
                 />
                 {false &&<Grouperror>
                     <p>

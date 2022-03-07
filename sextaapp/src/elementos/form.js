@@ -51,7 +51,7 @@ const Inputs = styled.input`
     }
 
     ${props => props.valido==='true' && css`
-        border: 3px solid transparent;
+        border: 3px solid ${colres.exito} !important;
     `}
 
     ${props => props.valido==='false' && css`
@@ -77,8 +77,13 @@ const Checkvalidate = styled.img`
     right: 10px;
     bottom: 14px;
     z-index: 100;
-    opacity: 0;
-    
+    display: none ;
+    ${props => props.valido==='true'&&css`
+        display: block;
+    `}
+    ${props => props.valido==='false'&&css`
+        display: none;
+    `}
 `;
 
 const Passview = styled.img`
@@ -137,6 +142,11 @@ const Button = styled.button`
     }
 `;
 
+const Titulo = styled.label`
+    font-weight: 700;
+    font-size: 1.2em;
+`;
 
 
-export {Form, Label, Groupinputs, Inputs, P, Checkvalidate, Groupbutton, Grouperror, Button, Passview};
+
+export {Titulo, Form, Label, Groupinputs, Inputs, P, Checkvalidate, Groupbutton, Grouperror, Button, Passview};
