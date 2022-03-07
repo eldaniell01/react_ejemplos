@@ -57,6 +57,7 @@ const Inputs = styled.input`
     ${props => props.valido==='false' && css`
         border: 3px solid ${colres.error} !important;
     `}
+    
 `;
 
 const P = styled.p`
