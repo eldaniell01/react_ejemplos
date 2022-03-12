@@ -113,7 +113,9 @@ const Grouperror =styled.div`
         position: absolute;
         margin-top: 10px;
     }
-    
+    @media(max-width:800px){
+        grid-column: span 1;
+    }
 `;
 
 const Groupbutton =styled.div`
@@ -122,7 +124,9 @@ const Groupbutton =styled.div`
     flex-direction: column;
     align-items: center;
     grid-column: span 2;
-    
+    @media(max-width:800px){
+        grid-column: span 1;
+    }
 `;
 
 const Button = styled.button`
