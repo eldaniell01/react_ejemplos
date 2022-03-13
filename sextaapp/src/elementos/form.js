@@ -26,6 +26,7 @@ const Label = styled.label`
     ${props => props.valido === 'false' && css`
         color: ${colres.error};
     `}
+    
 `;
 
 const Groupinputs = styled.div`
@@ -78,7 +79,7 @@ const Checkvalidate = styled.img`
     right: 10px;
     bottom: 14px;
     z-index: 100;
-    display: none ;
+    display: block ;
     ${props => props.valido==='true'&&css`
         display: block;
     `}
