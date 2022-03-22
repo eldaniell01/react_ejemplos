@@ -3,7 +3,7 @@ import { P, Title, Input, Groupinputs, Checkvalidate } from "../elements/form";
 import V from "../img/icons8_ok_96px.png";
 import E from "../img/icons8_cancel_96px.png";
 
-const Inputs = ({expresionRegular, state, changeState, title, id, error, type, placeholder, img}) =>{
+const Inputs = ({fun, expresionRegular, state, changeState, title, id, error, type, placeholder, img}) =>{
     const write = (e) =>{
         changeState({...state, campo: e.target.value})
     }
@@ -14,6 +14,11 @@ const Inputs = ({expresionRegular, state, changeState, title, id, error, type, p
             }else{
                 changeState({...state, valido: 'false'});
             }
+        }
+        if(fun){
+            fun();
+        }else{
+
         }
     }
     return(

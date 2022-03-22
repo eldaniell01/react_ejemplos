@@ -179,6 +179,41 @@ const Grouperror = styled.div`
     }
 `;
 
+const Groupsuccess = styled.div`
+    height: 45px;
+    line-height: 45px;
+    background: ${colres.exito};
+    padding: 0px 15px;
+    border-radius: 3px;
+    grid-column: span 2;
+    
+    p{
+        margin: 0px;
+    }
+    b{
+        margin-left: 30px;
+    }
+    img{
+        position: absolute;
+        margin-top: 10px;
+    }
+    @media(max-width:800px){
+        grid-column: span 1;
+    }
+`;
+
+const Groupcheck = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 2;
+    @media(max-width:800px){
+        grid-column: span 1;
+    }
+`;
 
 
-export {P, Groupemail, Grouperror, Form, Button, Groupbutton, Groupinputs, Checkvalidate, Checkerror, Input, Title};
+
+
+
+export {Groupsuccess, P, Groupcheck, Groupemail, Grouperror, Form, Button, Groupbutton, Groupinputs, Checkvalidate, Checkerror, Input, Title};
