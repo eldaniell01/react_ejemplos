@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Counter from "./components/Counter.js";
+import Search from "./components/Search.js";
+import { List } from "./components/List.js";
+import { Item } from "./components/Item.js";
+import { CreateHomeWork } from "./components/CreateHomeWork.js";
+
+const homeWorks = [
+  {text: 'barrer', completed: false},
+  {text: 'dormir', completed: false},
+  {text: 'comer', completed: false}
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <React.Fragment>
+      <Counter/>
+      <Search/>
+      <List>
+        {homeWorks.map(homeWorks=>(
+          <Item key={homeWorks.text} text={homeWorks.text}/>
+        ))}
+      </List>
+      <CreateHomeWork/>
+    </React.Fragment>
+  )
+};
 
 export default App;

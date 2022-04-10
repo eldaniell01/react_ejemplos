@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+
+body{
+  background: #F2E3D5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+#root:hover{
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.5);
+}

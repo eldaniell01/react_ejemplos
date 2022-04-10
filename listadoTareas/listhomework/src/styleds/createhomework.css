@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+
+
+.buttonCreate{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.6em;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background: #3CA6A6;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.buttonCreate:hover{
+    box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.5);
+}
+
