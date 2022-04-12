@@ -1,0 +1,31 @@
+#groupSearch{
+    margin: 0px;
+    width: 100%;
+    position: relative;
+    z-index: 90;
+}
+input{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 50px 0 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    transition: 0.4s ease all;
+    box-sizing: border-box;
+}
+
+input:focus{
+   
+    outline: none;
+    border: 3px solid #3CA6A6;
+}
+img{
+    position: absolute;
+    right: 5px;
+    bottom: 1px;
+    z-index: 100; 
+}

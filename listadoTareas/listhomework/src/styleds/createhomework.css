@@ -2,6 +2,7 @@
 
 
 .buttonCreate{
+    margin: 10px;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.6em;
     width: 60px;
@@ -12,9 +13,12 @@
     background: #3CA6A6;
     text-align: center;
     transition: 0.4s;
+    
+    transform: rotate(0);
 }
 
 .buttonCreate:hover{
-    box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, 0.5);
+    transform: rotate(360deg);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 

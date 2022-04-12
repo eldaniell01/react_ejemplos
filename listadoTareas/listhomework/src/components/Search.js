@@ -1,8 +1,13 @@
 import React from "react";
+import '.././styleds/search.css';
+import searchIcon from '.././img/icons8_search_48px.png'
 
 function Search(){
     return(
-        <input placeholder="tarea"/>
+        <div id="groupSearch">
+            <img src={searchIcon} width="true"></img>
+            <input placeholder="Buscar Tarea"/>
+        </div>
     )
 };
 

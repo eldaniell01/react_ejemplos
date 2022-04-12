@@ -1,4 +1,5 @@
 import React from "react";
+import '.././styleds/list.css'
 
 function List(props){
     return(

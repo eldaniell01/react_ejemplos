@@ -6,7 +6,7 @@ import { Item } from "./components/Item.js";
 import { CreateHomeWork } from "./components/CreateHomeWork.js";
 
 const homeWorks = [
-  {text: 'barrer', completed: false},
+  {text: 'barrer', completed: true},
   {text: 'dormir', completed: false},
   {text: 'comer', completed: false}
 ];
@@ -18,7 +18,7 @@ function App() {
       <Search/>
       <List>
         {homeWorks.map(homeWorks=>(
-          <Item key={homeWorks.text} text={homeWorks.text}/>
+          <Item key={homeWorks.text} text={homeWorks.text} completed={homeWorks.completed}/>
         ))}
       </List>
       <CreateHomeWork/>
