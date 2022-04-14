@@ -2,8 +2,8 @@ import React from "react";
 import '.././styleds/search.css';
 import searchIcon from '.././img/icons8_search_48px.png'
 
-function Search(){
-    const {stateSearch, setSearch} = React.useState("");
+function Search({stateSearch, setSearch}){
+    
     const onSearch =(event)=>{
         console.log(event.target.value);
         setSearch(event.target.value);

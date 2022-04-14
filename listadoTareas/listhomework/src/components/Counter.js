@@ -1,8 +1,9 @@
 import React from "react";
 import '.././styleds/counter.css'
-function Counter(){
+function Counter({total, completed}){
+    
     return(
-        <h2 className="counter">Haz completado 2 de 3 tareas</h2>
+        <h2 className="counter">Haz completado {completed} de {total} tareas</h2>
     )
 }
 
