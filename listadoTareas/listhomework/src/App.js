@@ -11,12 +11,63 @@ const homeWorks = [
   {text: 'comer', completed: false}
 ];
 
+function useHooks(itemName, initialValue){
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
+  const [item, setItems] = React.useState(initialValue);  
+  React.useEffect(()=>{
+    setTimeout(()=>{
+      try {
+        const localStoragetareas = localStorage.getItem(itemName);
+  
+        let parsetareas;
+        
+        if(!localStoragetareas){
+          localStorage.setItem(itemName, JSON.stringify(initialValue));
+          parsetareas=initialValue;
+        }else{
+          parsetareas=JSON.parse(localStoragetareas);
+        }
+
+        setItems(parsetareas);
+        setLoading(false);
+      }catch(error){
+        setError(error);
+      }
+    }, 2000);
+  });
+  
+  
+  const save = (newtareas)=>{
+    try{
+      const parsesTareas = JSON.stringify(newtareas);
+      localStorage.setItem(itemName, parsesTareas);
+      setItems(newtareas);
+    }catch(error){
+      setError(error);
+    }
+  }
+  return {
+    item,
+    save,
+    loading,
+    error,
+  }; 
+}
+
+
 function App() {
+  
+  const {
+    item: homeWorks2, 
+    save: saveHomeworks,
+    loading,
+    error
+  } = useHooks('tarea1', []);
   const [stateSearch, setSearch] = React.useState('');
-  const [homeWorks2, setHomeworks] = React.useState(homeWorks);
   const completedHomework = homeWorks2.filter(homeWorks1 => !!homeWorks1.completed).length;
   const total = homeWorks2.length;
-
+  
   var searchHomework =[];
 
 
@@ -28,21 +79,23 @@ function App() {
       const searchText =stateSearch.toLowerCase();
       return text.includes(searchText);
     });
+    
   }
+  
   const complet=(text)=>{
     const homeworkIndex = homeWorks2.findIndex(homeWorks1=>homeWorks1.text===text);
     const newHomework = [...homeWorks2];
     newHomework[homeworkIndex].completed=true;
-    setHomeworks(newHomework);
+    saveHomeworks(newHomework);
   };
 
   const deleteh=(text)=>{
     const homeworkIndex = homeWorks2.findIndex(homeWorks1=>homeWorks1.text===text);
     const newHomework = [...homeWorks2];
     newHomework.splice(homeworkIndex, 1);
-    setHomeworks(newHomework);
+    saveHomeworks(newHomework);
   };
-
+  
   return (
     <React.Fragment>
       <Counter
@@ -54,6 +107,9 @@ function App() {
         setSearch={setSearch}
       />
       <List>
+        {error&&<p>hubo un error...</p>}
+        {loading&&<p>se esta cargando</p>}
+        {(!loading&&!searchHomework.length)&&<p>crea la primer tarea</p>}
         {searchHomework.map(homeWorkss=>(
           <Item key={homeWorkss.text} text={homeWorkss.text} completed={homeWorkss.completed} onCompleted={()=>complet(homeWorkss.text)} onDelete={()=>deleteh(homeWorkss.text)}/>
         ))}
