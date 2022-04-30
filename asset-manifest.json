@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react_ejemplos/listadoTareas/listhomework/static/css/main.64407434.css",
+    "main.js": "/react_ejemplos/listadoTareas/listhomework/static/js/main.a2ea1e7f.js",
+    "index.html": "/react_ejemplos/listadoTareas/listhomework/index.html",
+    "main.64407434.css.map": "/react_ejemplos/listadoTareas/listhomework/static/css/main.64407434.css.map",
+    "main.a2ea1e7f.js.map": "/react_ejemplos/listadoTareas/listhomework/static/js/main.a2ea1e7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64407434.css",
+    "static/js/main.a2ea1e7f.js"
+  ]
+}
