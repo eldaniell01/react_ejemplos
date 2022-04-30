@@ -2,7 +2,7 @@
     margin: 0px;
     width: 100%;
     position: relative;
-    z-index: 90;
+    z-index: 1;
 }
 input{
     height: 50px;
@@ -19,9 +19,7 @@ input{
 }
 
 input:focus{
-   
-    outline: none;
-    border: 3px solid #3CA6A6;
+    outline: 3px solid #3CA6A6;
 }
 img{
     position: absolute;

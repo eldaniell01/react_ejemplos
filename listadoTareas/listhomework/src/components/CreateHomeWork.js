@@ -1,9 +1,14 @@
 import React from "react";
 import '../styleds/createhomework.css'
 
-function CreateHomeWork(){
+function CreateHomeWork(props){
+    const agregarTarea=()=>{
+        props.setOpenModal(prevState =>!prevState)
+    }
     return(
-        <button className="buttonCreate">+</button>
+        <div className="ButtonGroup">
+            <button className="buttonCreate" onClick={agregarTarea}>+</button>
+        </div>
     )
 };
 

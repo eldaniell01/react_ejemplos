@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
 
-
+.ButtonGroup{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 .buttonCreate{
     margin: 10px;
     font-family: 'Roboto Mono', monospace;
@@ -13,7 +18,7 @@
     background: #3CA6A6;
     text-align: center;
     transition: 0.4s;
-    
+    z-index: 2;
     transform: rotate(0);
 }
 

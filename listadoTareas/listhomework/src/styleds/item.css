@@ -3,7 +3,7 @@ li{
     padding: 10px;
 }
 #itemList{
-    background: #F2E7DC;
+    background: #159A9C;
     display: grid;
     grid-template-columns: 30px 1fr 30px;
     gap: 10px;
@@ -15,10 +15,11 @@ li{
 
 #itemList:hover{
     background: #E1E1ED;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 .icons{
     font-size: 1.5em; 
-
+    cursor: pointer;
 }
 .iconCheck{
     font-size: 1.5em;
@@ -40,6 +41,7 @@ p{
 }
 .delete{
     transition: 0.5s;
+    cursor: pointer;
 }
 .delete:hover{
     font-size: 1.5em;
