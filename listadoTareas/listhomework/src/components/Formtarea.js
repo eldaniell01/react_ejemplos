@@ -1,6 +1,9 @@
 import React from "react";
 import { TareaContext } from "./Context";
 import "../styleds/formtarea.css";
+import React from 'react'
+
+
 
 function Formtarea(){
     const [newTarea, setTareastate] = React.useState("")
