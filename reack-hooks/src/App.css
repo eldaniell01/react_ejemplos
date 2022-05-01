@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.dark{
+  width: 100%;
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+}
+
+.light{
+  width: 100%;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
